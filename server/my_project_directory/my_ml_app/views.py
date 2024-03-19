@@ -43,57 +43,52 @@ def home(request):
 # my_ml_app/views.py
 
 
-@csrf_exempt  # You can remove this decorator after setting up proper CSRF handling in React
-def upload_video(request):
-    if request.method == 'POST':
-        form = VideoUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            # Process the uploaded video file
-            # For now, let's just save it to the model
-            form.save()
-            return JsonResponse({'message': 'Video uploaded successfully!'}, status=200)
-        else:
-            return JsonResponse(form.errors, status=400)
-    return JsonResponse({'message': 'This is the video upload endpoint.'}, status=200)
-    
-
 @csrf_exempt  # Note: It's important to handle CSRF properly in production
 def upload_video(request):
     if request.method == 'POST':
         form = VideoUploadForm(request.POST, request.FILES)
         if form.is_valid():
             video = request.FILES['video']
-            save_video(video)
-            return HttpResponse("Video uploaded successfully")
+            # Assuming save_video returns the path where the video was saved
+            video_path = save_video(video)
+            # Return the video path or a unique identifier to the frontend
+
+            process_video(video_path)
+            return JsonResponse({'video_path': video_path})
     else:
-        form = VideoUploadForm()
-    return HttpResponse("Upload a video.")
+        return JsonResponse({'error': 'Invalid request'}, status=400)
 
 def save_video(video_file):
-    upload_dir = '/Users/nadinelindenmalmberg/Documents/GitHub/TIFX11-Kandidatarbete/MotionAGFormer/demo/video'
-    os.makedirs(upload_dir, exist_ok=True)
+    # Assuming you define your upload directory here
+    upload_dir = '../../MotionAGFormer/demo/video'
+    if not os.path.exists(upload_dir):
+        os.makedirs(upload_dir, exist_ok=True)
+    
     file_path = os.path.join(upload_dir, video_file.name)
     
     with open(file_path, 'wb+') as destination:
         for chunk in video_file.chunks():
             destination.write(chunk)
+    # For security reasons, consider returning a relative path or an identifier instead
     return file_path
 
 
-def process_video(request, video_filename):
-    # Define the path to the uploaded video
-    video_path = os.path.join('/Users/nadinelindenmalmberg/Documents/GitHub/TIFX11-Kandidatarbete/MotionAGFormer/demo/video', video_filename)
-    
-    # Define the path to your script (adjust as necessary)
-    script_path = os.path.join('/Users/nadinelindenmalmberg/Documents/GitHub/TIFX11-Kandidatarbete/MotionAGFormer', 'demo', 'vis.py')
-    
-    # Command to run your script
+
+def process_video(video_path):
+
+    # Define the full path to the vis.py script
+    # Adjust this path according to your project's structure
+    script_path = '../../MotionAGFormer/demo/vis.py'
+
+    # Construct the command to run
     command = ['python', script_path, '--video', video_path]
-    
-    # Execute the command
+
     try:
-        result = subprocess.run(command, check=True, capture_output=True, text=True)
-        # If you have output to return, parse it and send it back in the response
-        return JsonResponse({'status': 'success', 'output': result.stdout})
+        # Execute the command
+        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        # If the script runs successfully, return the stdout
+        return result.stdout
     except subprocess.CalledProcessError as e:
-        return JsonResponse({'status': 'error', 'error': str(e)}, status=500)
+        # If the script fails, log the error and return None or handle accordingly
+        print(f"Error running script: {e.stderr}")
+        return None
