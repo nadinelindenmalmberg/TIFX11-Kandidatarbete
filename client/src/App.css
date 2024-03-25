@@ -1,20 +1,13 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #303a4d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,29 +15,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.uploadButton {
-  background-color: #90bdca; /* Green */
-  color: white;
-  padding: 15px 32px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-.uploadButton:hover {
-  background-color: #83a4ad; /* Darker shade of green */
-  
-}
-.fileupload{
-margin-top: 300px;
-margin-left: 450px;
-padding: 30px;
 }
