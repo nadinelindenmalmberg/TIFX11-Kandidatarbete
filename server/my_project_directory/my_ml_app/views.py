@@ -49,29 +49,21 @@ def upload_video(request):
         form = VideoUploadForm(request.POST, request.FILES)
         if form.is_valid():
             video = request.FILES['video']
-            # Assuming save_video returns the path where the video was saved
-            video_path = save_video(video)
-            # Return the video path or a unique identifier to the frontend
-
-            process_video(video_path)
-            return JsonResponse({'video_path': video_path})
+            save_video(video)
+            return HttpResponse("Video uploaded successfully")
     else:
-        return JsonResponse({'error': 'Invalid request'}, status=400)
+        form = VideoUploadForm()
+    return HttpResponse("Upload a video.")
 
 def save_video(video_file):
-    # Assuming you define your upload directory here
-    upload_dir = '../../MotionAGFormer/demo/video'
-    if not os.path.exists(upload_dir):
-        os.makedirs(upload_dir, exist_ok=True)
-    
+    upload_dir = '/Users/nadinelindenmalmberg/Documents/GitHub/TIFX11-Kandidatarbete/server/my_project_directory/videos'
+    os.makedirs(upload_dir, exist_ok=True)
     file_path = os.path.join(upload_dir, video_file.name)
     
     with open(file_path, 'wb+') as destination:
         for chunk in video_file.chunks():
             destination.write(chunk)
-    # For security reasons, consider returning a relative path or an identifier instead
     return file_path
-
 
 
 def process_video(video_path):
