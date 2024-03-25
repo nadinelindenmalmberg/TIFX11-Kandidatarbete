@@ -28,11 +28,23 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.uploadButton {
+  background-color: #90bdca; /* Green */
+  color: white;
+  padding: 15px 32px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+.uploadButton:hover {
+  background-color: #83a4ad; /* Darker shade of green */
+  
+}
+.fileupload{
+margin-top: 300px;
+margin-left: 450px;
+padding: 30px;
 }
