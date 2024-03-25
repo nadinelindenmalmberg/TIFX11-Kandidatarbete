@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
+import "./App.css";
+
 
 function VideoUpload() {
     const [outputPath, setOutputPath] = useState('');
@@ -13,10 +15,10 @@ function VideoUpload() {
  
     const handleUpload = async () => {
         const formData = new FormData();
+
         if (file) {
             formData.append('video', file);
         }
-        
         try {
             const response = await axios.post(
                 'http://localhost:8000/upload_video/',
@@ -49,8 +51,8 @@ function VideoUpload() {
  
     return (
         <div>
-            <input type="file" accept="video/*" onChange={handleFileChange} />
-            <button onClick={handleUpload}>Upload Video</button>
+            <input className="fileupload" type="file" accept="video/*" onChange={handleFileChange} />
+            <button className="uploadButton" onClick={handleUpload}>Upload Video</button>
             {/* Conditionally render the output based on outputPath */}
             {outputPath && <video src={outputPath} controls />}
         </div>
