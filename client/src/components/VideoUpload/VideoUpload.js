@@ -9,11 +9,15 @@ function VideoUpload() {
     const [outputPath, setOutputPath] = useState('');
     const [file, setFile] = useState(null);
     const [uploadedVideoPath, setUploadedVideoPath] = useState('');
+    const [isUploadSuccessful, setIsUploadSuccessful] = useState(false);
+
 
 
     const handleFileChange = (e) => {
         // Check if files are selected and update state
         if (e.target.files.length > 0) {
+            setIsUploadSuccessful(false);
+
           setFile(e.target.files[0]);
         } else {
           setFile(null);
@@ -31,6 +35,8 @@ function VideoUpload() {
                     const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
                     console.log(`${percentCompleted}%`);
                     // Update state here if you wish to display this in the UI
+                    setIsUploadSuccessful(true);
+
                 }
             });
             console.log('Uploaded:', response.data);
@@ -56,22 +62,29 @@ function VideoUpload() {
         }
     }, [uploadedVideoPath]); // This effect depends on the uploadedVideoPath state
 
+    const handleRemoveFile = () => {
+        setFile(null);
+        setIsUploadSuccessful(false);
+    };
+
     return (
         <div className="file-upload-container">
-          <label className="file-upload-label">
-            {file ? file.name : "Choose a file"}
-            <input
-              type="file"
-              onChange={handleFileChange}
-              style={{ display: 'none' }} // Hide the actual input element
-            />
-          </label>
-          {file && <button onClick={() => setFile(null)}>Remove file</button>}
-          <button className="fileUpload" onClick={handleUpload}>Upload Video</button>
-     
+            <label className="file-upload-label">
+                {isUploadSuccessful ? "Successfully Uploaded!" : (file ? file.name : "Choose a file")}
+                <input
+                    type="file"
+                    onChange={handleFileChange}
+                    style={{ display: 'none' }}
+                />
+            </label>
+            {file && !isUploadSuccessful && (
+                <button onClick={handleRemoveFile} className="remove-file-button">Remove file</button>
+            )}
+            <button className="fileUpload" onClick={handleUpload} disabled={isUploadSuccessful}>Upload Video</button>
+            {outputPath && <video src={outputPath} controls />}
         </div>
-        );
-    }
+    );
+}
 export default VideoUpload;
 
 
