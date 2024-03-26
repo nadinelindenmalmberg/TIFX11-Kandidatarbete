@@ -14,9 +14,9 @@ function NavBar() {
       <div className="logo">BiomechAnalysis</div>
       <button className="menu-toggle" onClick={toggleMenu}>☰</button>
       <ul className={`menu ${isOpen ? 'show' : ''}`}>
-        <li><a href="#upload">Upload</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   );

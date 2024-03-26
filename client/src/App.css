@@ -15,4 +15,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background: radial-gradient(circle at center, rgb(36, 36, 43), rgb(6, 5, 5) 50%, rgb(19, 17, 51));
+
 }
