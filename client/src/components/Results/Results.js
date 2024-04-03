@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Results = () => {
+function Results() {
+    console.log("Rendering Contact page");
     return (
-        <div>
-            <h1>Analysis Results</h1>
-            {/* Content and logic for displaying the results will go here */}
-        </div>
+      <div className="contact">
+        rherhethetjet
+        <h1>Contact Us</h1>
+        <p>Please contact us at info@example.com</p>
+      </div>
     );
-};
+  }
 
 export default Results;
-
-
+  
