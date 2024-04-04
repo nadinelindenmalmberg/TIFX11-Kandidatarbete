@@ -1,5 +1,28 @@
 /* VideoUpload.css */
+body, html {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(circle at center, rgb(40, 40, 48), rgb(6, 5, 5) 30%, rgb(19, 17, 51));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; /* Sätter bakgrunden bakom innehållet */
 
+}
+
+
+.full-page-background {
+  height: 100vh; /* Täcker hela vyhöjden */
+  width: 100vw; /* Täcker hela vybredden */
+  background-color: #303a4d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  background: radial-gradient(circle at center, rgb(40, 40, 48), rgb(6, 5, 5) 30%, rgb(19, 17, 51));
+}
 .file-upload-container {
   display: flex;
   flex-direction: column;
@@ -7,25 +30,30 @@
   justify-content: center;
   padding: 50px;
   border-radius: 10px;
-  margin-top: 1px; /* Vertically center a bit */
+  margin-top: 80px; /* Vertically center a bit */
+  color: #ffffff;
+  font-size: 21px;
+
 }
 
 .file-upload-label {
   font-size: 18px;
   color: #FFF;
-  background-color: #4caf50; /* Sporty green */
   padding: 12px 36px;
-  border-radius: 25px;
+  margin-top: 20px;
   margin-bottom: 12px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   font-family: 'Racing Sans One', cursive;
+  background-color: #070612; /* Green color for the upload button */
+  border: 2px solid #ffffff;
 
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .file-upload-label:hover {
-  background-color: #66bb6a; /* Lighter green on hover */
+  background-color: #0018ce; /* Lighter green on hover */
   transform: translateY(-2px); /* Slight lift */
 }
 
@@ -35,17 +63,15 @@ input[type="file"] {
 
 /* Upload button styling */
 .fileUpload {
-  background-color: #555; /* Neutral tone for the upload button */
+  background-color: #000000; /* Neutral tone for the upload button */
   color: #ffffff;
   padding: 12px 36px;
-  border: none;
-  border-radius: 25px;
+  border: 2px solid #ffffff;
   margin: 8px;
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-
 
 }
 
@@ -59,8 +85,6 @@ button {
   background-color: #ff5252; /* Red color for removal */
   color: #FFF;
   padding: 6px 24px;
-  border: none;
-  border-radius: 15px;
   font-size: 16px;
   margin-top: 4px;
   cursor: pointer;
