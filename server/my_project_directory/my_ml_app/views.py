@@ -56,7 +56,7 @@ def upload_video(request):
     return HttpResponse("Upload a video.")
 
 def save_video(video_file):
-    upload_dir = '/Users/nadinelindenmalmberg/Documents/GitHub/TIFX11-Kandidatarbete/server/my_project_directory/videos'
+    upload_dir = '../my_project_directory/videos'
     os.makedirs(upload_dir, exist_ok=True)
     file_path = os.path.join(upload_dir, video_file.name)
     
@@ -69,7 +69,6 @@ def save_video(video_file):
 def process_video(video_path):
 
     # Define the full path to the vis.py script
-    # Adjust this path according to your project's structure
     script_path = '../../MotionAGFormer/demo/vis.py'
 
     # Construct the command to run
@@ -84,3 +83,6 @@ def process_video(video_path):
         # If the script fails, log the error and return None or handle accordingly
         print(f"Error running script: {e.stderr}")
         return None
+    
+
+

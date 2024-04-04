@@ -1,15 +1,25 @@
 import React from 'react';
+import "./Results.css";
 
-function Results() {
-    console.log("Rendering Contact page");
-    return (
-      <div className="contact">
-        rherhethetjet
-        <h1>Contact Us</h1>
-        <p>Please contact us at info@example.com</p>
+// Dummy data for demonstration
+const analysisResults = {
+  maxForce: '500 N',
+  peakStress: '120 MPa',
+  flexionAngle: '60 degrees',
+};
+
+
+function ResultsPage() {
+  return (
+    <div className="results-container">
+      <h1>Analysis Results</h1>
+      <div className="results">
+        <p><strong>Maximum Force:</strong> {analysisResults.maxForce}</p>
+        <p><strong>Peak Stress:</strong> {analysisResults.peakStress}</p>
+        <p><strong>Flexion Angle:</strong> {analysisResults.flexionAngle}</p>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-export default Results;
-  
+export default ResultsPage;
