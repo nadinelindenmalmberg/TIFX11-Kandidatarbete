@@ -1,0 +1,988 @@
+{
+    "Name": "240403-P-v9.qtm",
+    "MeasurementCreation": "2024-04-03T15:19:25.787",
+    "ExportTime": "2024-04-04T14:40:45.602",
+    "User": "Chalmers TRACKS sportlab",
+    "QtmVersion": "2023.3 (build 12577)",
+    "CurrentFrame": 828,
+    "TraceRange": {
+        "Start": 852,
+        "End": 852
+    },
+    "Timebase": {
+        "Frequency": 170.000000,
+        "Range": {
+            "Start": 1,
+            "End": 5100
+        },
+        "SequenceCodeStartOffset": 0
+    },
+    "Cameras": [
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1869,
+            "AvgResidual": 0.780123,
+            "ExposureDelay": 0,
+            "Serial": 27895,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 3062.375732,
+                "y": 2856.997070,
+                "z": 2562.628906,
+                "r11": 0.182207,
+                "r12": 0.426029,
+                "r13": -0.886172,
+                "r21": -0.738052,
+                "r22": 0.654754,
+                "r23": 0.163023,
+                "r31": 0.649677,
+                "r32": 0.624337,
+                "r33": 0.433732
+            },
+            "Intrinsic": {
+                "FocalLength": 8.743327,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102189.960938,
+                "FocalLengthV": 102187.507812,
+                "CenterPointU": 57854.839844,
+                "CenterPointV": 34770.757812,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.072562,
+                "RadialDistortion2": 0.156641,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": -0.000283,
+                "TangentalDistortion2": -0.000114
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1811,
+            "AvgResidual": 0.810023,
+            "ExposureDelay": 0,
+            "Serial": 27897,
+            "Model": "Miqus M3",
+            "ViewRotation": 270,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": -2285.980469,
+                "y": -1102.685791,
+                "z": 2548.500000,
+                "r11": 0.462979,
+                "r12": 0.051465,
+                "r13": 0.884874,
+                "r21": -0.366429,
+                "r22": 0.920124,
+                "r23": 0.138206,
+                "r31": -0.807081,
+                "r32": -0.388230,
+                "r33": 0.444856
+            },
+            "Intrinsic": {
+                "FocalLength": 8.773100,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102534.460938,
+                "FocalLengthV": 102538.921875,
+                "CenterPointU": 56379.062500,
+                "CenterPointV": 33104.882812,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.078700,
+                "RadialDistortion2": 0.186680,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": -0.000501,
+                "TangentalDistortion2": 0.000164
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1688,
+            "AvgResidual": 0.725786,
+            "ExposureDelay": 0,
+            "Serial": 27922,
+            "Model": "Miqus M3",
+            "ViewRotation": 270,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 3050.682373,
+                "y": -1186.888794,
+                "z": 2573.380127,
+                "r11": -0.361950,
+                "r12": 0.417012,
+                "r13": 0.833722,
+                "r21": -0.675242,
+                "r22": -0.733882,
+                "r23": 0.073926,
+                "r31": 0.642682,
+                "r32": -0.536207,
+                "r33": 0.547213
+            },
+            "Intrinsic": {
+                "FocalLength": 8.781519,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102632.281250,
+                "FocalLengthV": 102637.890625,
+                "CenterPointU": 57259.847656,
+                "CenterPointV": 32382.042969,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.069671,
+                "RadialDistortion2": 0.161430,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000605,
+                "TangentalDistortion2": 0.000849
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 2081,
+            "AvgResidual": 0.761735,
+            "ExposureDelay": 0,
+            "Serial": 27896,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": -2260.169922,
+                "y": 2993.780518,
+                "z": 2533.770996,
+                "r11": -0.341331,
+                "r12": 0.111427,
+                "r13": -0.933315,
+                "r21": -0.615047,
+                "r22": -0.777341,
+                "r23": 0.132129,
+                "r31": -0.710782,
+                "r32": 0.619132,
+                "r33": 0.333864
+            },
+            "Intrinsic": {
+                "FocalLength": 8.743542,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102187.984375,
+                "FocalLengthV": 102194.468750,
+                "CenterPointU": 57976.281250,
+                "CenterPointV": 32187.289062,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.072751,
+                "RadialDistortion2": 0.162140,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000537,
+                "TangentalDistortion2": 0.000016
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1484,
+            "AvgResidual": 2.326232,
+            "ExposureDelay": 0,
+            "Serial": 28001,
+            "Model": "Miqus Video",
+            "ViewRotation": 0,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 10.560000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 3275.468262,
+                "y": 590.254333,
+                "z": 1150.380005,
+                "r11": -0.023365,
+                "r12": 0.998917,
+                "r13": -0.040248,
+                "r21": 0.019504,
+                "r22": 0.040706,
+                "r23": 0.998981,
+                "r31": 0.999537,
+                "r32": 0.022556,
+                "r33": -0.020434
+            },
+            "Intrinsic": {
+                "FocalLength": 6.197138,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 122879.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 72082.343750,
+                "FocalLengthV": 72141.953125,
+                "CenterPointU": 60451.312500,
+                "CenterPointV": 32937.656250,
+                "Skew": 0.000000,
+                "RadialDistortion1": 0.005993,
+                "RadialDistortion2": -0.008973,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000462,
+                "TangentalDistortion2": -0.001174
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1420,
+            "AvgResidual": 0.670730,
+            "ExposureDelay": 0,
+            "Serial": 27923,
+            "Model": "Miqus M3",
+            "ViewRotation": 270,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 3219.456787,
+                "y": -1499.193848,
+                "z": 1176.057007,
+                "r11": -0.028182,
+                "r12": 0.155939,
+                "r13": 0.987365,
+                "r21": -0.686362,
+                "r22": -0.721120,
+                "r23": 0.094299,
+                "r31": 0.726714,
+                "r32": -0.675032,
+                "r33": 0.127353
+            },
+            "Intrinsic": {
+                "FocalLength": 8.766821,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102461.062500,
+                "FocalLengthV": 102465.546875,
+                "CenterPointU": 58507.996094,
+                "CenterPointV": 32863.230469,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.070460,
+                "RadialDistortion2": 0.150553,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000422,
+                "TangentalDistortion2": 0.000789
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1953,
+            "AvgResidual": 0.786652,
+            "ExposureDelay": 0,
+            "Serial": 27898,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": -2254.395508,
+                "y": 545.800720,
+                "z": 2523.151611,
+                "r11": -0.527948,
+                "r12": -0.004665,
+                "r13": -0.849264,
+                "r21": -0.010037,
+                "r22": -0.999881,
+                "r23": 0.011731,
+                "r31": -0.849217,
+                "r32": 0.014717,
+                "r33": 0.527839
+            },
+            "Intrinsic": {
+                "FocalLength": 8.734655,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102076.132812,
+                "FocalLengthV": 102098.531250,
+                "CenterPointU": 57762.519531,
+                "CenterPointV": 34949.542969,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.075815,
+                "RadialDistortion2": 0.175238,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000498,
+                "TangentalDistortion2": 0.000153
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1436,
+            "AvgResidual": 0.799012,
+            "ExposureDelay": 0,
+            "Serial": 27893,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 3233.967285,
+                "y": 2913.721191,
+                "z": 1176.433472,
+                "r11": -0.165811,
+                "r12": 0.313561,
+                "r13": -0.934979,
+                "r21": -0.744915,
+                "r22": 0.581465,
+                "r23": 0.327109,
+                "r31": 0.646226,
+                "r32": 0.750718,
+                "r33": 0.137163
+            },
+            "Intrinsic": {
+                "FocalLength": 8.758251,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102361.429688,
+                "FocalLengthV": 102364.867188,
+                "CenterPointU": 57640.523438,
+                "CenterPointV": 32263.720703,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.075969,
+                "RadialDistortion2": 0.172581,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": -0.000343,
+                "TangentalDistortion2": 0.000182
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1622,
+            "AvgResidual": 0.858539,
+            "ExposureDelay": 0,
+            "Serial": 27899,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 3096.147461,
+                "y": 834.114075,
+                "z": 2555.609619,
+                "r11": 0.564893,
+                "r12": 0.098745,
+                "r13": -0.819235,
+                "r21": -0.154049,
+                "r22": 0.987980,
+                "r23": 0.012861,
+                "r31": 0.810657,
+                "r32": 0.118937,
+                "r33": 0.573314
+            },
+            "Intrinsic": {
+                "FocalLength": 8.751473,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102276.468750,
+                "FocalLengthV": 102291.351562,
+                "CenterPointU": 57547.562500,
+                "CenterPointV": 35304.968750,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.074212,
+                "RadialDistortion2": 0.172527,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000800,
+                "TangentalDistortion2": -0.000343
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1365,
+            "AvgResidual": 2.042495,
+            "ExposureDelay": 0,
+            "Serial": 28002,
+            "Model": "Miqus Video",
+            "ViewRotation": 0,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 10.560000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1919,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 996.594238,
+                "y": -1437.977905,
+                "z": 1048.386230,
+                "r11": 0.999686,
+                "r12": -0.014467,
+                "r13": -0.020452,
+                "r21": 0.021407,
+                "r22": 0.069319,
+                "r23": 0.997365,
+                "r31": -0.013011,
+                "r32": -0.997490,
+                "r33": 0.069607
+            },
+            "Intrinsic": {
+                "FocalLength": 6.150428,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 122879.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 71559.046875,
+                "FocalLengthV": 71578.187500,
+                "CenterPointU": 60938.535156,
+                "CenterPointV": 34490.714844,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.001828,
+                "RadialDistortion2": -0.001020,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000278,
+                "TangentalDistortion2": 0.000274
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1596,
+            "AvgResidual": 0.725762,
+            "ExposureDelay": 0,
+            "Serial": 27900,
+            "Model": "Miqus M3",
+            "ViewRotation": 270,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": -384.004822,
+                "y": -1289.228882,
+                "z": 2550.942139,
+                "r11": 0.309668,
+                "r12": 0.516201,
+                "r13": 0.798525,
+                "r21": -0.854229,
+                "r22": 0.519875,
+                "r23": -0.004800,
+                "r31": -0.417611,
+                "r32": -0.680637,
+                "r33": 0.601942
+            },
+            "Intrinsic": {
+                "FocalLength": 8.756904,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102371.945312,
+                "FocalLengthV": 102323.078125,
+                "CenterPointU": 58582.718750,
+                "CenterPointV": 33543.390625,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.076002,
+                "RadialDistortion2": 0.177927,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000119,
+                "TangentalDistortion2": 0.000438
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1527,
+            "AvgResidual": 0.714751,
+            "ExposureDelay": 0,
+            "Serial": 27894,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 1993.059814,
+                "y": -1290.601807,
+                "z": 2555.631104,
+                "r11": 0.269178,
+                "r12": -0.486629,
+                "r13": -0.831105,
+                "r21": 0.885637,
+                "r22": 0.464133,
+                "r23": 0.015081,
+                "r31": 0.378405,
+                "r32": -0.740116,
+                "r33": 0.555912
+            },
+            "Intrinsic": {
+                "FocalLength": 8.773661,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102533.593750,
+                "FocalLengthV": 102552.835938,
+                "CenterPointU": 57690.457031,
+                "CenterPointV": 34199.863281,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.076818,
+                "RadialDistortion2": 0.185383,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": -0.000188,
+                "TangentalDistortion2": -0.000281
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 2094,
+            "AvgResidual": 0.758780,
+            "ExposureDelay": 0,
+            "Serial": 27924,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": -376.980988,
+                "y": 3249.524902,
+                "z": 2529.703857,
+                "r11": -0.183004,
+                "r12": 0.424364,
+                "r13": -0.886806,
+                "r21": -0.908745,
+                "r22": -0.417177,
+                "r23": -0.012101,
+                "r31": -0.375090,
+                "r32": 0.803666,
+                "r33": 0.461984
+            },
+            "Intrinsic": {
+                "FocalLength": 8.758246,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102367.921875,
+                "FocalLengthV": 102358.320312,
+                "CenterPointU": 57139.582031,
+                "CenterPointV": 34162.035156,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.069692,
+                "RadialDistortion2": 0.156070,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": 0.000525,
+                "TangentalDistortion2": 0.000113
+            }
+        },
+        {
+            "Active": true,
+            "Calibrated": true,
+            "PointCount": 1601,
+            "AvgResidual": 0.779791,
+            "ExposureDelay": 0,
+            "Serial": 27921,
+            "Model": "Miqus M3",
+            "ViewRotation": 90,
+            "FovMarker": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideo": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "SensorSize": {
+                "HeightMM": 5.984000,
+                "WidthMM": 9.944000
+            },
+            "FovMarkerMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "FovVideoMax": {
+                "Left": 0,
+                "Top": 0,
+                "Right": 1823,
+                "Bottom": 1087
+            },
+            "Transform": {
+                "x": 2012.368774,
+                "y": 3251.402588,
+                "z": 2545.649170,
+                "r11": -0.128450,
+                "r12": -0.412529,
+                "r13": 0.901843,
+                "r21": 0.966764,
+                "r22": -0.254793,
+                "r23": 0.021147,
+                "r31": 0.221059,
+                "r32": 0.874586,
+                "r33": 0.431547
+            },
+            "Intrinsic": {
+                "FocalLength": 8.753304,
+                "SensorMinU": 0.000000,
+                "SensorMaxU": 116735.000000,
+                "SensorMinV": 0.000000,
+                "SensorMaxV": 69631.000000,
+                "FocalLengthU": 102309.492188,
+                "FocalLengthV": 102301.210938,
+                "CenterPointU": 57736.792969,
+                "CenterPointV": 33198.765625,
+                "Skew": 0.000000,
+                "RadialDistortion1": -0.069812,
+                "RadialDistortion2": 0.151472,
+                "RadialDistortion3": 0.000000,
+                "TangentalDistortion1": -0.000720,
+                "TangentalDistortion2": 0.000309
+            }
+        }
+    ]
+}
