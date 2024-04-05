@@ -2,18 +2,25 @@
 ## SKRIPT SOM AUTOMAGISKT FIXAR DIN QUALISYS TSV-FIL SÅ ATT PANDAS GILLAR DEN
 ## Skriven av Alexander Mayer, mars 2024
 
-# Filen du vill ladda in, i samma mapp som du kör skriptet
-TSV_FILENAME = '240306_v2_vals.tsv'
+# Välj filen du vill ladda in, i tsv-format
+# Resultatet kommer vara en liknande fil som skapas med filmnamnet "ORIGINALFILNAMN_formatted.csv"
 
-# Resultatet kommer vara en liknande fil som skapas med filmnamnet "ORIGINALFILNAMN_formatted.tsv"
 
 CONVERT_TO_CSV = True
-
 ################################################################################
+import tkinter as tk
+from tkinter import filedialog
 
+
+# välj fil
+root = tk.Tk(); root.withdraw()
+tsv_filepath = filedialog.askopenfilename(filetypes=[("Qualisys data", "*.tsv")])
+if not tsv_filepath:
+    print('No file selected!')
+    quit()
 
 # laddar in filen
-with open(TSV_FILENAME,'r',encoding='utf-8') as f:
+with open(tsv_filepath,'r',encoding='utf-8') as f:
     all_text = f.read()
 
 # hittar rubrikerna för varje markör
@@ -33,6 +40,7 @@ if raise_header_error:
 new_header = ""
 for name in header:
     new_header += f'{name}-x\t{name}-y\t{name}-z\t'
+new_header = new_header[:-1]
 
 # fixar det nya innehållet, med all data direkt under en första rad med de nya markörnamnen
 if len(all_text.split('Measured\n'))==2:
@@ -45,12 +53,13 @@ else:
 
 
 if not CONVERT_TO_CSV:
-    new_filename = TSV_FILENAME.replace('.tsv','_formatted.tsv')
+    new_filepath = tsv_filepath.replace('.tsv','_formatted.tsv')
 else:
     # konverterar tsv till csv
     new_text = new_text.replace('\t',',')
-    new_filename = TSV_FILENAME.replace('.tsv','_formatted.csv')
+    new_filepath = tsv_filepath.replace('.tsv','_formatted.csv')
 
 # sparar den nya filen
-with open(new_filename,'w',encoding='utf-8') as f:
+with open(new_filepath,'w',encoding='utf-8') as f:
     f.write(new_text)
+print('Successfully generated '+str(new_filepath.split('/')[-1]))
