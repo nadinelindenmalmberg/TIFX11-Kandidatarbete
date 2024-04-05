@@ -12,7 +12,7 @@ from tkinter import filedialog
 # Ingen boundry box
 # Antar visible/2 hela tiden
 # Flera videor i en fil
-# 2022 var 0-indexerad i skeleton?...
+# 2022 var 1-indexerad i skeleton?...
 ########################
 
 VIDEO_FILENAME = 'coolvideoname.mp4'
@@ -70,7 +70,7 @@ LICENSES = [
 
 
 
-def create_annotation_info_new(annotation_id, image_id, image_size=None, tolerance=2, keypoints=None):
+def create_annotation_info_new(annotation_id, image_id, bbox, image_size=None, tolerance=2, keypoints=None):
     """
     Returns annotation information as a dictionary for COCO-keypoints in a
     JSON style format.
@@ -78,10 +78,12 @@ def create_annotation_info_new(annotation_id, image_id, image_size=None, toleran
     annotation_info = {
        "image_id": image_id,
        "num_keypoints": int(len(keypoints)/3),  # 18
+       "bbox": bbox,
        "keypoints": keypoints,
        "iscrowd": 0,
        "category_id": 1,
        "id": annotation_id,
+       "segmentation": ""
     }
     return annotation_info
 
@@ -131,6 +133,13 @@ def get_QTM_keypoints(data_filepath,axes):
         keypoints.append(list(row))
     return keypoints
 
+def get_bbox(keypoints):
+    x, y, v = np.reshape(keypoints,(int(len(keypoints)/3) , 3)).T
+    x_min = np.min(x)
+    x_max = np.max(x)
+    y_min = np.min(y)
+    y_max = np.max(y)
+    return [x_min, y_min, (x_max-x_min), (y_max-y_min)]
 
 def generate_coco(video_name,frames_folder_path):
 
@@ -170,7 +179,8 @@ def generate_coco(video_name,frames_folder_path):
         # Create the annotations in the single person coco-keypoint format. 
         annotation_info = create_annotation_info_new(
             annotation_id, 
-            image_id, 
+            image_id,
+            bbox=get_bbox(keypoints[frame_i]), 
             keypoints=keypoints[frame_i]
         )
 
