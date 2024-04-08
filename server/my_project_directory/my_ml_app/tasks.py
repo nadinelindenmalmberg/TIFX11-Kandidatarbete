@@ -26,11 +26,6 @@ def handle_uploaded_file(file_id):
     # For demonstration, let's just print something
     print(f"Processed file {file_id}")
 
-# Define any additional helper functions you need, for example:
-# def preprocess(file_content):
-#     # Implement preprocessing steps here
-#     return processed_content
-
 
 def example_task():
     print("This is an example task.")

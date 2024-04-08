@@ -48,18 +48,6 @@ function VideoUpload() {
         }
     };
 
-    useEffect(() => {
-        if (uploadedVideoPath) {
-            axios.get('http://localhost:8000/process_video', {
-                params: { video_path: uploadedVideoPath }
-            })
-            .then(response => {
-                const output = response.data.output_path;
-                setOutputPath(output);
-            })
-            .catch(error => console.error('Error processing video:', error));
-        }
-    }, [uploadedVideoPath]);
 
     const handleRemoveFile = () => {
         setFile(null);
