@@ -1,13 +1,9 @@
 from django.db import models
 
-
 class UploadedFile(models.Model):
-    # Your fields here
-    pass  # Replace with your actual model fields
+    # Assuming each upload might correspond to a video
+    file = models.FileField(upload_to='uploads/')
+    processed = models.BooleanField(default=False) # To check if the file has been processed
 
 class VideoFile(models.Model):
     video = models.FileField(upload_to='videos/')
-
-    
-    
-    # Add other fields as necessary, such as processing status, results, etc.
