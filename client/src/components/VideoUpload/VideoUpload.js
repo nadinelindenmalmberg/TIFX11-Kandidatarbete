@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./VideoUpload.css";
+import { useNavigate } from 'react-router-dom';
+
 
 function VideoUpload() {
     const [outputPath, setOutputPath] = useState('');
     const [file, setFile] = useState(null);
-    const [uploadedVideoPath, setUploadedVideoPath] = useState('');
     const [isUploadSuccessful, setIsUploadSuccessful] = useState(false);
     const [errorMessage, setErrorMessage] = useState(''); // State to store the error message
+    const [videoUrl, setVideoUrl] = useState('');
+    const navigate = useNavigate();
+
 
     const handleFileChange = (e) => {
         // Reset error message and upload status on file change
@@ -22,15 +26,15 @@ function VideoUpload() {
     };
 
     const handleUpload = async () => {
-        // Check if a file has been selected
         if (!file) {
             setErrorMessage('Please select a file to upload.');
-            return; // Exit the function if no file is selected
+            return;
         }
-
+        
+    
         const formData = new FormData();
         formData.append('video', file);
-
+    
         try {
             const response = await axios.post('http://localhost:8000/upload_video/', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
@@ -39,9 +43,19 @@ function VideoUpload() {
                     console.log(`${percentCompleted}%`);
                 }
             });
-            console.log('Uploaded:', response.data);
-            setIsUploadSuccessful(true);
-            setErrorMessage(''); // Reset error message on successful upload
+    
+            if (response.data.success) {
+                console.log('Uploaded:', response.data.video_url);
+                setIsUploadSuccessful(true);
+                setErrorMessage('');
+                // Update the videoUrl state with the URL from the backend
+                setVideoUrl(response.data.video_url);  // This should be the full URL including the 'videos' subdirectory
+                navigate(`/results?videoUrl=${encodeURIComponent(response.data.video_url)}`);
+
+            } else {
+                // Handle case where upload is not successful
+                setErrorMessage(response.data.message || 'Upload was not successful. Please try again.');
+            }
         } catch (error) {
             console.error('Error uploading video:', error);
             setErrorMessage('Error uploading video. Please try again.');
@@ -55,6 +69,8 @@ function VideoUpload() {
         setErrorMessage(''); // Reset error message
     };
 
+
+    
     return (
         <div className="file-upload-container"> 
             <h1>BiomechAnalysis</h1>
@@ -68,8 +84,18 @@ function VideoUpload() {
             )}
             <button className="fileUpload" onClick={handleUpload} disabled={isUploadSuccessful || !file}>Upload Video</button>
             {outputPath && <video src={outputPath} controls />}
+            {videoUrl ? (
+                <video width="320" height="240" controls>
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            ) : (
+                <p>No video selected</p>
+            )}
+        
         </div>
+        
     );
-}
 
+}
 export default VideoUpload;
