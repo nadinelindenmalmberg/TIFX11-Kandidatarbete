@@ -49,8 +49,10 @@ function VideoUpload() {
                 setIsUploadSuccessful(true);
                 setErrorMessage('');
                 // Update the videoUrl state with the URL from the backend
-                setVideoUrl(response.data.video_url);  // This should be the full URL including the 'videos' subdirectory
-                navigate(`/results?videoUrl=${encodeURIComponent(response.data.video_url)}`);
+                setVideoUrl(response.data.video_url); 
+                localStorage.setItem('videoUrl', response.data.video_url);
+
+                navigate('/results');
 
             } else {
                 // Handle case where upload is not successful
@@ -90,7 +92,9 @@ function VideoUpload() {
                     Your browser does not support the video tag.
                 </video>
             ) : (
-                <p>No video selected</p>
+                //style on this text should be a small size
+                <p>No video selected</p> 
+
             )}
         
         </div>

@@ -27,7 +27,7 @@ import { useLocation } from 'react-router-dom';
 // export default ResultsPage;
 function Results() {
   const location = useLocation();
-  const videoUrl = new URLSearchParams(location.search).get('videoUrl');
+  const videoUrl = localStorage.getItem('videoUrl');
 
   return (
     <div className="results-container">
