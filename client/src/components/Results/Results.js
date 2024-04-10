@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Results.css";
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+
 
 // Dummy data for demonstration
 // const analysisResults = {
@@ -25,37 +25,26 @@ import axios from 'axios';
 // }
 
 // export default ResultsPage;
-
-function Results({ fileID }) {
-  const [videoUrl, setVideoUrl] = useState('');
-
-  useEffect(() => {
-    // Function to fetch the video URL
-    const fetchVideoUrl = async () => {
-      try {
-        // Assuming you have a Django endpoint `/api/video/<file_id>/` that returns the video URL
-        const response = await axios.get(`http://localhost:8000/video/${fileID}/`);
-        setVideoUrl(response.data.videoUrl); // Assuming the response contains a field `videoUrl`
-      } catch (error) {
-        console.error('Error fetching video URL:', error);
-        // Handle error (e.g., show an error message)
-      }
-    };
-
-    fetchVideoUrl();
-  }, [fileID]); // Dependency array ensures this effect runs when `fileID` changes
+function Results() {
+  const location = useLocation();
+  const videoUrl = localStorage.getItem('videoUrl');
 
   return (
     <div className="results-container">
+      <h1>Analysis Results</h1>
       {videoUrl ? (
-        // If videoUrl is not empty, render the video player
-        <video src={videoUrl} controls width="640" />
+        <div>
+          <video width="320" height="240" controls>
+            <source src={videoUrl} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Add additional analysis results here if needed */}
+        </div>
       ) : (
-        <p>Loading video...</p>
+        <p>No video selected</p>
       )}
     </div>
   );
 }
-
 export default Results;
 

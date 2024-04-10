@@ -7,3 +7,14 @@ class UploadedFile(models.Model):
 
 class VideoFile(models.Model):
     video = models.FileField(upload_to='videos/')
+
+# models.py
+class Video(models.Model):
+    title = models.CharField(max_length=255)
+    video_file = models.FileField(upload_to='videos/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    # Add more fields as needed
+
+    def __str__(self):
+        return self.title
