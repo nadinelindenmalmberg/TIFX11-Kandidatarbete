@@ -11,7 +11,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 import os
-
+from .calculate import calculate_from_json  # Adjust the import path as needed
 
 def file_upload(request):
     if request.method == 'POST':
@@ -63,19 +63,18 @@ def save_video(video_file):
     return file_path
 
 
-def results_page(request, file_id):
-    uploaded_file = get_object_or_404(UploadedFile, id=file_id)
-    video_file = uploaded_file.processed_video.last()  # Assuming there might be multiple processed outputs
-    context = {'video_url': video_file.video.url if video_file else None}
-    return render(request, 'my_ml_app/results', context)
+# def results_page(request, file_id):
+#     print("i am here")
+#     uploaded_file = get_object_or_404(UploadedFile, id=file_id)
+#     video_file = uploaded_file.processed_video.last()  # Assuming there might be multiple processed outputs
+#     context = {'video_url': video_file.video.url if video_file else None}
+#     return render(request, 'my_ml_app/results', context)
 
-# views.py
-from .models import Video
 
-def video_details(request, video_name):
-    try:
-        video = Video.objects.get(title=video_name)
-        video_url = request.build_absolute_uri(video.video_file.url)
-        return JsonResponse({'success': True, 'video_url': video_url})
-    except Video.DoesNotExist:
-        return JsonResponse({'success': False, 'error': 'Video not found'})
+
+def calculation_view(request, filename):
+    result = calculate_from_json(filename)
+    if result is not None:
+        return JsonResponse({"success": True, "result": result})
+    else:
+        return JsonResponse({"success": False, "error": "File not found or invalid"})

@@ -134,3 +134,4 @@ CORS_ALLOWED_ORIGINS = [
 # settings.py
 MEDIA_URL="/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+ML_OUTPUTS_DIR = os.path.join(BASE_DIR, 'json_files')
