@@ -14,7 +14,6 @@ function Results() {
 
 
     useEffect(() => {
-        // Rjjjeplace 'output_123.json' with the actual file name you expect
         const filename = 'output_123.json';
         axios.get(`/calculate/${filename}`)
             .then(response => {

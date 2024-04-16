@@ -63,15 +63,6 @@ def save_video(video_file):
     return file_path
 
 
-# def results_page(request, file_id):
-#     print("i am here")
-#     uploaded_file = get_object_or_404(UploadedFile, id=file_id)
-#     video_file = uploaded_file.processed_video.last()  # Assuming there might be multiple processed outputs
-#     context = {'video_url': video_file.video.url if video_file else None}
-#     return render(request, 'my_ml_app/results', context)
-
-
-
 def calculation_view(request, filename):
     result = calculate_from_json(filename)
     if result is not None:
