@@ -51,7 +51,7 @@ function VideoUpload() {
                 // Update the videoUrl state with the URL from the backend
                 setVideoUrl(response.data.video_url); 
                 localStorage.setItem('videoUrl', response.data.video_url);
-
+                
                 navigate('/results');
 
             } else {

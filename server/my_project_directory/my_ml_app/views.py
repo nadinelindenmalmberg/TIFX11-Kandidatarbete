@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 import os
 from .calculate import calculate_from_json  # Adjust the import path as needed
-
+from .inferencer import Inferencer
 def file_upload(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
@@ -20,7 +20,6 @@ def file_upload(request):
             # Save the uploaded file instance
             instance = UploadedFile(file=request.FILES['file'])
             instance.save()
-            
             # Process the uploaded file with a machine learning model asynchronously
             handle_uploaded_file.delay(instance.id)
 
@@ -43,7 +42,7 @@ def upload_video(request):
         if form.is_valid():
             video = request.FILES['video']
             file_path = save_video(video)
-            
+
             save_video(video)
             video_url = request.build_absolute_uri(settings.MEDIA_URL + 'videos/' + video.name)
             # Use JsonResponse to return the video URL
