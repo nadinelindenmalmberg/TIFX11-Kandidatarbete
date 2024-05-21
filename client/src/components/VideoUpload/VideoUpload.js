@@ -3,13 +3,14 @@ import axios from 'axios';
 import "./VideoUpload.css";
 import { useNavigate } from 'react-router-dom';
 
-
 function VideoUpload() {
     const [outputPath, setOutputPath] = useState('');
     const [file, setFile] = useState(null);
     const [isUploadSuccessful, setIsUploadSuccessful] = useState(false);
     const [errorMessage, setErrorMessage] = useState(''); // State to store the error message
     const [videoUrl, setVideoUrl] = useState('');
+    const [videoName, setVideoName] = useState('');
+
     const navigate = useNavigate();
 
 
@@ -50,8 +51,9 @@ function VideoUpload() {
                 setErrorMessage('');
                 // Update the videoUrl state with the URL from the backend
                 setVideoUrl(response.data.video_url); 
+                setVideoName(response.data.video_name)
+                console.log(videoName)
                 localStorage.setItem('videoUrl', response.data.video_url);
-                
                 navigate('/results');
 
             } else {
@@ -92,7 +94,6 @@ function VideoUpload() {
                     Your browser does not support the video tag.
                 </video>
             ) : (
-                //style on this text should be a small size
                 <p>No video selected</p> 
 
             )}

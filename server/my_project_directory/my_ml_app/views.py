@@ -1,4 +1,6 @@
 
+import subprocess
+import cv2
 from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
@@ -11,8 +13,11 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 import os
-from .calculate import calculate_from_json  # Adjust the import path as needed
+from .calculate import calculate_from_json, get_frequence_data, get_frequency_two_legs, process_all_files_angles, transitions  # Adjust the import path as needed
 from .inferencer import Inferencer
+from .split_video2 import split_video_into_frames
+
+
 def file_upload(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
@@ -41,21 +46,30 @@ def upload_video(request):
         form = VideoUploadForm(request.POST, request.FILES)
         if form.is_valid():
             video = request.FILES['video']
-            file_path = save_video(video)
-
             save_video(video)
-            video_url = request.build_absolute_uri(settings.MEDIA_URL + 'videos/' + video.name)
+            input_video_path = os.path.join(settings.MEDIA_ROOT, 'videos', video.name)
+            output_video_path = os.path.join(settings.MEDIA_ROOT, 'results', video.name)
+            split_video_into_frames(input_video_path)
+            Inferencer(input_video_path, output_video_path)
+            
+            #split_video_frames(input_video_path, video.name)
+            
+            # Resize the video
+            resize_video(output_video_path, input_video_path)
+
+            # Get the video URL
+            video_url = request.build_absolute_uri(os.path.join(settings.MEDIA_URL, 'videos', video.name))
             # Use JsonResponse to return the video URL
-            return JsonResponse({"success": True, "video_url": video_url})
+            return JsonResponse({"success": True, "video_url": video_url, "video_name": video.name})
     else:
         form = VideoUploadForm()
     return JsonResponse({"success": False, "message": "Upload a video."})
 
 def save_video(video_file):
-    upload_dir = os.path.join(settings.MEDIA_ROOT, 'videos')  # This is the 'videos' subdirectory under MEDIA_ROOT
+    upload_dir = os.path.join(settings.MEDIA_ROOT, 'videos/')  # Use the codec name as the subdirectory 
+
     os.makedirs(upload_dir, exist_ok=True)
     file_path = os.path.join(upload_dir, video_file.name)
-
     with open(file_path, 'wb+') as destination:
         for chunk in video_file.chunks():
             destination.write(chunk)
@@ -63,8 +77,33 @@ def save_video(video_file):
 
 
 def calculation_view(request, filename):
-    result = calculate_from_json(filename)
-    if result is not None:
-        return JsonResponse({"success": True, "result": result})
+    #result = calculate_from_json(filename)
+    #result = get_frequence_data(filename)
+    #transs = transitions(result)
+    total_process = get_frequency_two_legs(filename)
+    angles = process_all_files_angles(filename)
+    if total_process is not None:
+        return JsonResponse({"success": True, "result": total_process, "angles":angles} )
     else:
         return JsonResponse({"success": False, "error": "File not found or invalid"})
+    
+
+def resize_video(input_file, output):
+    """
+    Resize a video using FFmpeg.
+
+    Args:
+    input_file (str): Path to the input video file.
+    output_file (str): Path to save the resized output video file.
+    resolution (str): Desired resolution in the format "widthxheight" (e.g., "1920x1080").
+    """
+    ffmpeg_command = [
+        'ffmpeg',
+        '-i', input_file,
+        '-vf', "scale=1920:1080",
+        '-y',
+        output
+    ]
+
+    subprocess.run(ffmpeg_command)
+

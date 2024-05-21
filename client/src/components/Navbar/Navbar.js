@@ -12,7 +12,8 @@ function NavBar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">BiomechAnalysis</div>
+      <div className="logo"></div>
+      <img src="pictures/slut.png" className="coin" />
       <button className="menu-toggle" onClick={toggleMenu}>☰</button>
       <ul className={`menu ${isOpen ? 'show' : ''}`}>
         <li><Link to="/upload">Upload</Link></li>

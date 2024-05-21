@@ -1,62 +1,69 @@
 /* src/components/Navbar/Navbar.css */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.939);
-    color: #fff;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .menu-toggle {
-    display: none;
-    background-color: #123;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.939);
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Racing Sans One', cursive;    
+}
+
+.menu-toggle {
+  display: none;
+  background-color: #123;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #0f0; /* Sporty green on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
   .menu {
-    list-style: none;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .menu.show {
     display: flex;
-    gap: 1rem;
   }
-  
-  .menu li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+  .menu-toggle {
+    display: block;
   }
-  
-  .menu li a:hover {
-    color: #0f0; /* Sporty green on hover */
+
+  .menu li {
+    text-align: center;
+    padding: 0.5rem 0;
   }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
-    .menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      gap: 0;
-    }
-  
-    .menu.show {
-      display: flex;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  
-    .menu li {
-      text-align: center;
-      padding: 0.5rem 0;
-    }
-  }
-  
+}
+
+.coin {
+  width: 110px;
+  margin-right: 1050px;
+  height: 25px;
+}
+

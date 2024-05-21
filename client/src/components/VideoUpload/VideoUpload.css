@@ -4,7 +4,6 @@ body, html {
   margin: 0;
   background: radial-gradient(circle at center, rgb(40, 40, 48), rgb(6, 5, 5) 30%, rgb(19, 17, 51));
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   z-index: -1; /* Sätter bakgrunden bakom innehållet */
 
